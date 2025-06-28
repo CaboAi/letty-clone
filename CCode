@@ -1,2 +1,17 @@
-cd .\letty-clone
-git status
+# 3a) Test file
+echo "It begins! 🚀" > hello.txt
+
+# 3b) .gitignore
+@"
+node_modules/
+.env
+__pycache__/
+.DS_Store
+"@ > .gitignore
+
+# 3c) README
+@"
+# letty-clone
+
+Monorepo for frontend (Next.js), API (NestJS), and retriever (FastAPI).
+"@ > README.md
