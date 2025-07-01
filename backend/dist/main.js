@@ -2,16 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
-const common_1 = require("@nestjs/common");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
-    app.useGlobalPipes(new common_1.ValidationPipe());
-    app.enableCors({
-        origin: ['http://localhost:3000', 'http://frontend:3000'],
-        credentials: true,
-    });
-    await app.listen(3001);
-    console.log('Backend server running on port 3001');
+    const port = process.env.PORT || 3001;
+    await app.listen(port);
+    console.log(`Backend running on port ${port}`);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
