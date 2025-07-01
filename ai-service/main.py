@@ -194,4 +194,4 @@ if __name__ == "__main__":
         reload=settings.environment == "development",
         workers=1,  # Single worker for Railway
         access_log=settings.environment != "production"
-    )
+    )# Updated for Railway deployment
